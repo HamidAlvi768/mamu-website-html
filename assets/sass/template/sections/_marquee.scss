@@ -1,0 +1,67 @@
+/* Marquee 1---------------------------------- */
+.marquee-area {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    margin-left: 150px;
+    @include xxl {
+        margin: 0;
+    }
+}
+
+.marquee {
+    position: relative; 
+    --duration: 120s;
+    --gap: 35px;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+
+    &:first-child {
+        --duration: 100s;
+    }
+
+    &:last-child {
+        --duration: 80s;
+    }
+
+    &.marquee--reverse {
+        .marquee-group {
+            --gap: 35px;
+            animation-direction: reverse;
+        }
+    }
+
+    .marquee-group {
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -ms-flex-pack: distribute;
+        justify-content: flex-start;
+        gap: var(--gap);
+        animation: scroll var(--duration) linear infinite; 
+
+        .item { 
+            font-family: $title-font;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 50px;
+            letter-spacing: 0.02em;
+            color: $title-color;
+            display: inline-block;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.4s ease-in-out;
+
+            img {
+                margin: 0 35px 0 0;
+            }
+        }
+    }
+}
+
+/* marquee-area end -----------------------------*/

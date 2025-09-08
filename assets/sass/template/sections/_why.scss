@@ -1,0 +1,161 @@
+.video-area {
+    position: relative;
+    z-index: 2;
+
+    &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(3, 6, 14, 0.6), rgba(3, 6, 14, 0.6));
+        z-index: -1;
+    }
+}
+
+.choose-area {
+    position: relative;
+    z-index: 2;
+
+    &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(3, 6, 14, 0.8), rgba(3, 6, 14, 0.8));
+        z-index: -1;
+
+    }
+}
+
+.choose-item {
+    background-color: $theme-color;
+    border-radius: 16px;
+    padding: 72px 34px 34px;
+    text-align: center;
+
+    @include ml {
+        padding: 50px 25px 25px;
+    }
+
+    .box-icon {
+        width: 82px;
+        height: 82px;
+        line-height: 82px;
+        border-radius: 50%;
+        text-align: center;
+        display: block;
+        margin: auto auto 32px auto;
+        background: #F0F0F0;
+        border: 1px solid #E4E4E6;
+
+        img {
+            transition: all 0.4s ease-in-out;
+        }
+
+    }
+
+    .box-title {
+        font-size: 20px;
+        color: $white-color;
+        max-width: 180px;
+        display: block;
+        margin: auto auto 18px auto;
+
+        a {
+            color: inherit;
+        }
+    }
+
+    .box-text {
+        max-width: 250px;
+        color: $white-color;
+        display: block;
+        margin: auto auto 20px auto;
+    }
+
+    .icon-btn {
+        width: 56px;
+        height: 56px;
+        line-height: 56px;
+        background-color: $theme-color2;
+        border-radius: 32px;
+        color: $title-color;
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+            background-color: $title-color;
+            color: $white-color;
+            border-color: $title-color;
+        }
+    }
+
+    &:hover {
+        .box-icon {
+            img {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+}
+
+/* video-box1 start ------------------*/
+
+.video-box1 {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-bottom: 100px;
+    @include xl {
+        padding-bottom: 0;
+    }
+
+    .play-btn {
+
+        &:after,
+        &:before {
+            background-color: rgba(255, 255, 255, 0.2);
+
+        }
+
+        >i {
+            --icon-size: 84px;
+            font-size: 35px;
+            color: var(--theme-color2);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+
+
+
+    .box-title {
+        font-weight: 600;
+        font-size: 200px;
+        line-height: 200px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.2);
+        text-align: center;
+        margin-bottom: 0;
+
+        @include xl {
+            font-size: 150px;
+            line-height: 150px;
+        }
+
+        @include xs {
+            font-size: 70px;
+            line-height: 80px;
+        }
+
+        @include vxs {
+            font-size: 60px;
+            line-height: 70px;
+        }
+
+    }
+
+    .video-shape {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+}

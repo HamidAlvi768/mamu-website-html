@@ -1,0 +1,120 @@
+.breadcumb-menu {
+    max-width: 100%;
+    padding: 0;
+    margin: 10px 0 -0.5em 0;
+    list-style-type: none;
+    position: relative;
+
+    li {
+        display: inline-block;
+        margin-right: 3px;
+        padding-right: 5px;
+        list-style: none;
+        color: #FFD54F;
+        position: relative;
+        font-size: 20px;
+        font-family: $body-font;
+        font-weight: 500;
+
+        &:before {
+            content: "";
+            position: relative;
+            background-image: url("../img/icon/icon.svg");
+            width: 21px;
+            height: 24px;
+            display: inline-block;
+        }
+
+        &:after {
+            content: "\f105";
+            position: relative;
+            top: 2px;
+            margin-left: 6px;
+            font-weight: 500;
+            font-size: 20px;
+            color: $white-color;
+            font-family: var(--icon-font);
+        }
+
+        &:last-child {
+            padding-right: 0;
+            margin-right: 0;
+
+            &:after {
+                display: none;
+            }
+
+            &:before {
+                display: none;
+            }
+        }
+
+
+    }
+
+    a,
+    span {
+        white-space: normal;
+        color: inherit;
+        word-break: break-word;
+        color: $white-color;
+        margin-left: 8px;
+    }
+}
+
+.breadcumb-title {
+    color: $white-color;
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: capitalize;  
+    margin: -0.22em 0 -0.14em 0; 
+
+}
+
+.breadcumb-wrapper {
+    background-color: $title-color;
+    padding: 137px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+
+    &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(3, 6, 14, 0.8), rgba(3, 6, 14, 0.8)); 
+        z-index: -1;
+    }
+
+    @include xs {
+        mask-size: cover;
+    }
+}
+
+.breadcumb-content {
+    max-width: 850px;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+@include lg {
+    .breadcumb-wrapper {
+        padding: 100px 0 100px 0;
+    }
+
+    .breadcumb-menu {
+
+        li,
+        a,
+        span {
+            font-size: 16px;
+        }
+    }
+}
+
+@include sm {
+    .breadcumb-title {
+        font-size: 32px;
+    }
+}

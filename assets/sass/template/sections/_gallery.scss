@@ -1,0 +1,85 @@
+/* Galler 1 ----------------------------------*/
+.gallery-card {
+	position: relative;
+
+	&:nth-child(2) {
+		margin-top: 24px;
+	}
+
+	.box-img {
+		position: relative;
+		z-index: 2;
+		border-radius: 16px;
+		transition: 0.4s ease-in-out;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: linear-gradient(0deg, rgba(3, 6, 14, 0.5), rgba(3, 6, 14, 0.5));
+			transition: 0.4s ease-in-out;
+			transform: scaleX(0);
+			opacity: 0;
+			border-radius: inherit;
+			visibility: hidden;
+			z-index: 1;
+
+		}
+
+		img {
+			border-radius: 16px;
+			transition: 0.4s ease-in-out;
+
+			@include md {
+				width: 100%;
+			}
+		}
+	}
+
+	.simple-btn {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%); 
+		font-size: 35px; 
+		color: $white-color;
+		transition: 0.4s ease-in-out;
+		visibility: hidden;
+		opacity: 0;
+		z-index: 3;
+		transition: all 0.4s ease;
+	}
+
+	&:hover {
+		.box-img {
+			&:before {
+				opacity: 1;
+				visibility: visible;
+				transform: scaleX(1);
+			}
+
+			img {
+				transform: scale(1.1);
+			}
+		}
+
+		.simple-btn {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	&.style2 {
+		.box-img {
+			border-radius: 0;
+			@include md {
+				margin-bottom: 0;
+			}
+			img {
+				border-radius: 0;
+			}
+		}
+	}
+}

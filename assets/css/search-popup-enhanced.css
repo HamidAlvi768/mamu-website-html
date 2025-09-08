@@ -1,0 +1,190 @@
+/* Enhanced Search Popup Styles */
+.popup-search-box {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.95);
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: all ease 0.4s;
+    backdrop-filter: blur(10px);
+}
+
+.popup-search-box.show {
+    opacity: 1;
+    visibility: visible;
+    width: 100.1%;
+    height: 100%;
+    transition: all ease 0.4s;
+    border-radius: 0;
+}
+
+.popup-search-box button.searchClose {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--theme-color2);
+    background-color: transparent;
+    font-size: 22px;
+    border-radius: 50%;
+    transform: rotate(0);
+    transition: all ease 0.4s;
+    color: var(--theme-color2);
+    cursor: pointer;
+}
+
+.popup-search-box button.searchClose:hover {
+    color: var(--title-color);
+    background-color: #fff;
+    border-color: transparent;
+    transform: rotate(90deg);
+}
+
+.popup-search-box form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    padding-bottom: 40px;
+    cursor: auto;
+    width: 100%;
+    max-width: 700px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform ease 0.4s;
+}
+
+.popup-search-box.show form {
+    transition-delay: 0.5s;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-search-box form input {
+    font-size: 18px;
+    height: 70px;
+    width: 100%;
+    border: 2px solid var(--theme-color2);
+    background-color: transparent;
+    padding-left: 30px;
+    color: #fff;
+    border-radius: 50px;
+    transition: all ease 0.3s;
+}
+
+.popup-search-box form input:focus {
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.popup-search-box form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.popup-search-box form button {
+    position: absolute;
+    top: 0px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    right: 12px;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    transition: all ease 0.4s;
+    transform: scale(1.001);
+}
+
+.popup-search-box form button:hover {
+    transform: scale(1.1);
+    color: var(--theme-color2);
+}
+
+/* Loading state */
+.popup-search-box.loading form button {
+    animation: spin 1s linear infinite;
+}
+
+.popup-search-box.loading form input {
+    border-color: var(--theme-color2);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+    .popup-search-box form {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 767px) {
+    .popup-search-box form {
+        max-width: 90%;
+    }
+    
+    .popup-search-box form input {
+        font-size: 16px;
+        height: 60px;
+    }
+    
+    .popup-search-box form button {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+    
+    .popup-search-box button.searchClose {
+        width: 50px;
+        height: 50px;
+        top: 20px;
+        right: 20px;
+        font-size: 18px;
+    }
+}
+
+/* Accessibility improvements */
+.popup-search-box:focus-within {
+    outline: 2px solid var(--theme-color2);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .popup-search-box {
+        background-color: rgba(0, 0, 0, 0.98);
+    }
+    
+    .popup-search-box form input {
+        border-width: 3px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .popup-search-box,
+    .popup-search-box form,
+    .popup-search-box button.searchClose,
+    .popup-search-box form input,
+    .popup-search-box form button {
+        transition: none;
+    }
+    
+    .popup-search-box.loading form button {
+        animation: none;
+    }
+}
