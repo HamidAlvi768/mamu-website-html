@@ -1,0 +1,15 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+# Serve existing files directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Route /blog to blog.html
+RewriteRule ^blog/?$ blog.html [L]
+
+# Route /blog/<id> to blog-details.html and preserve id in query for fallback
+RewriteRule ^blog/([^/]+)/?$ blog-details.html?id=$1 [L,QSA]
+
+
