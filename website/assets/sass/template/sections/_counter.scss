@@ -1,0 +1,246 @@
+/* Counter 1 ---------------------------------- */
+.counter-card {
+    position: relative;
+    text-align: center;
+    background-color: $theme-color;
+    border-radius: 16px;
+    padding: 33px 24px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all 0.4s ease-in-out;
+    background-image: url("../img/shape/counter-shape.png");
+
+    &.style2 {
+        background-color: #004D40;
+    }
+
+    .box-number {
+        position: relative;
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: 0.02em;
+        display: block;
+        color: $title-color;
+        width: 106px;
+        height: 100px;
+        display: block;
+        margin: auto;
+        padding: 40px 20px;
+        margin-bottom: 24px;
+        z-index: 2;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            mask-image: url("../img/shape/counter-shape-1.png");
+            mask-repeat: no-repeat;
+            mask-position: center;
+            mask-size: 100% 100%;
+            background-color: $theme-color2;
+            z-index: -1;
+            transition: 0.4s ease-in-out;
+        }
+
+        &:after {
+            inset: 3px;
+            background-color: $white-color;
+        }
+
+        img {
+            transition: all 0.4s ease-in-out;
+        }
+    }
+
+    .box-title {
+        text-transform: capitalize;
+        color: $white-color;
+        margin-bottom: 6px;
+    }
+
+    .box-text {
+        color: $white-color;
+    }
+
+    .media-body {
+        flex: 1;
+    }
+
+    &:hover {
+        background-color: $theme-color2;
+        background-image: url("../img/shape/counter-shape2.png");
+
+        .box-icon {
+            img {
+                animation: scaleUpDown 0.6s ease;
+            }
+        }
+
+        .box-title {
+            color: $title-color;
+        }
+
+        .box-text {
+            color: $title-color;
+        }
+    }
+}
+
+@include lg {
+    .counter-card {
+        &-wrap {
+            &.style2 {
+                display: grid;
+                grid-template-columns: auto auto;
+                gap: 30px 0;
+            }
+
+            .divider {
+                display: none;
+            }
+        }
+    }
+}
+
+@include md {
+    .counter-card {
+        &-wrap {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 30px 0;
+
+            .divider {
+                display: none;
+            }
+        }
+    }
+}
+
+
+@include sm {
+    .counter-card {
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+
+    }
+}
+
+@include xs {
+    .counter-card {
+        &-wrap {
+            display: block;
+            margin: auto;
+
+            .divider {
+                display: none;
+            }
+        }
+    }
+}
+
+/* counter-box  start ---------------------*/
+.donation-counter-wrapp {
+    display: flex;
+    gap: 40px;
+
+    @include ml {
+        gap: 20px;
+    }
+
+    @include xl {
+        gap: 8px;
+    }
+
+    @include lg {
+        justify-content: center;
+    }
+
+    @media(max-width: 480px) {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 20px;
+    }
+}
+
+.counter-box {
+    position: relative;
+    text-align: center;
+
+    .box-number {
+        position: relative;
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: 0.02em;
+        display: block;
+        color: $title-color;
+        width: 106px;
+        height: 100px;
+        margin: auto;
+        padding: 40px 20px;
+        margin-bottom: 24px;
+        z-index: 2;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            mask-image: url("../img/shape/counter-shape-1.png");
+            mask-repeat: no-repeat;
+            mask-position: center;
+            mask-size: 100% 100%;
+            background-color: $theme-color2;
+            z-index: -1;
+            transition: 0.4s ease-in-out;
+        }
+
+        &:after {
+            inset: 3px;
+            background-color: $white-color;
+        }
+
+        img {
+            transition: all 0.4s ease-in-out;
+        }
+    }
+
+    .box-title {
+        color: $white-color;
+        margin-bottom: 0px;
+    }
+
+    .box-text {
+        color: $white-color;
+    }
+
+    .media-body {
+        flex: 1;
+    }
+
+    &.style2 {
+        .box-number { 
+            font-family: $title-font; 
+            &:after {
+                background-color: $theme-color2;
+            }
+        }
+    }
+}
+
+.counter-image {
+    border-radius: 16px;
+    max-height: 570px;
+
+    @include xxl {
+        max-height: 100%;
+    }
+
+    img {
+        border-radius: 16px;
+    }
+}

@@ -1,0 +1,44 @@
+.error-area {
+	padding: 180px 0 191px 0; 
+	@include ml {
+		padding: 140px 0 160px 0; 
+	}
+	@include md {
+		padding: 100px 0 120px 0; 
+	}
+}
+.error-content {
+    text-align: center;
+}
+.error-title {
+	font-size: 72px; 
+    margin-bottom: 22px;
+	@include xl {
+		font-size: 62px;
+	}
+	@include sm {
+		font-size: 52px;
+	}
+}
+.error-text {
+    margin-bottom: 50px; 
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@include md {
+	.error-title {
+		margin-bottom: 15px;
+	}
+	
+	.error-text {
+		margin-bottom: 25px;
+	}
+}
+
+@include sm {
+	.error-title {
+		margin-bottom: 10px;
+	}
+}

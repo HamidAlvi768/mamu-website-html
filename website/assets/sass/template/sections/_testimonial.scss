@@ -1,0 +1,569 @@
+/* Testimonial Card ---------------------------------- */
+.box-desig {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.testi-card {
+    position: relative;
+    z-index: 2;
+    max-width: 1050px;
+    display: block;
+    margin: auto;
+    padding: 75px 125px 32px 125px;
+
+    @include md {
+        padding: 75px 90px 32px 90px;
+    }
+
+    @include sm {
+        padding: 75px 60px 32px 60px;
+    }
+
+    @include vxs {
+        padding: 40px 10px;
+        background-color: #FAFFFF;
+    }
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        mask-image: url("../img/shape/testi-shape.png");
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: 100% 100%;
+        background-color: $theme-color;
+        z-index: -1;
+        transition: 0.4s ease-in-out;
+
+        @include vxs {
+            display: none;
+        }
+    }
+
+    &:after {
+        inset: 1px;
+        background-color: #FAFFFF;
+    }
+
+    .testi-shape1 {
+        position: absolute;
+        left: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include vxs {
+            display: none;
+        }
+    }
+
+    .testi-shape2 {
+        position: absolute;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include vxs {
+            display: none;
+        }
+    }
+
+    .testi-quote {
+        margin-bottom: 30px;
+    }
+
+    .box-text {
+        font-weight: 500;
+        font-size: 20px;
+        color: $title-color;
+        margin-bottom: 33px;
+
+        @include sm {
+            font-size: 16px;
+        }
+    }
+
+    .box-profile {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .box-author {
+        max-width: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: block;
+        margin-bottom: 15px;
+
+        @include sm {
+            max-width: 60px;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    .box-title {
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: 0.02em;
+        margin: 0;
+
+        @include xs {
+            font-size: 18px;
+        }
+
+    }
+
+    .box-desig {
+        margin-bottom: 0;
+    }
+}
+
+.testiSlide1 {
+    .slider-arrow {
+        @include xxl {
+            display: block !important;
+        }
+    }
+}
+
+.testiSlide2 {
+    .slider-arrow {
+        @include xxl {
+            display: block !important;
+        }
+    }
+}
+
+/* testimonial box start ------------------------------*/
+
+.testi-box {
+    position: relative;
+    background-color: #F1F3F5;
+    border-radius: 8px;
+    transition: all 0.4s ease-in-out;
+    padding: 40px;
+    z-index: 2;
+
+    @include xl {
+        padding: 30px;
+    }
+
+    @include xs {
+        padding: 20px;
+    }
+
+    .box-text {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: -0.3rem;
+    }
+
+    .box-wrapp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+
+        @include sm {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .box-profile {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        @media(max-width: 430px) {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        @include sm {
+            margin-bottom: 20px;
+        }
+
+    }
+
+    .box-author {
+        min-width: 100px;
+
+        @media(max-width: 430px) {
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    }
+
+    .box-title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+        margin: 0;
+
+        @include vxs {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
+    .box-desig {
+        font-weight: 400;
+        font-size: 16px;
+        font-family: $body-font;
+        color: $body-color;
+    }
+
+    .testi-quote {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        z-index: -1;
+    }
+}
+
+/* testimonial 3 end ------------------------------*/
+
+/* testimonial 3 start ------------------------------*/
+.testi-grid {
+    background-color: #F1F3F5;
+
+    .testi-quote {
+        margin-bottom: 13px;
+    }
+
+    .box-text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0.02em;
+        margin-bottom: 25px;
+
+    }
+
+    .box-author {
+        max-width: 48px;
+        display: block;
+        margin: auto auto 8px auto;
+    }
+
+    .box-title {
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        margin-bottom: 0;
+
+    }
+}
+
+.testiSlide1 {
+    .swiper-pagination-bullets {
+        margin: 0;
+    }
+
+    .swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0px 7px !important;
+        border: 1px solid #999999;
+
+        &.swiper-pagination-bullet-active {
+            background-color: var(--theme-color);
+            border-color: var(--theme-color);
+        }
+    }
+
+}
+
+/* testimonial 3 end ------------------------------*/
+
+/* testi area start ---------------------------*/
+.testi-area {
+    background-color: #F1F3F5;
+}
+
+.testiSlide6 {
+    .slider-arrow {
+        left: var(--pos-x, 120px);
+
+        &.slider-next {
+            right: var(--pos-x, 120px);
+            left: auto;
+        }
+    }
+
+    .testi-grid2 {
+        &-thumb {
+            .swiper-slide {
+                width: 100px !important;
+
+                @include sm {
+                    width: 60px !important;
+                    margin-right: 4px !important;
+                }
+            }
+        }
+    }
+
+}
+
+.testi-grid2 {
+    &-area {
+        max-width: 782px;
+        display: block;
+        margin: auto;
+    }
+
+    &-thumb {
+        margin-bottom: 30px;
+
+        @include sm {
+            max-width: 400px;
+            margin-bottom: 10px;
+        }
+
+        @include vxs {
+            max-width: 350px;
+        }
+
+        .swiper-wrapper {
+            justify-content: center;
+            margin: 30px 0;
+            gap: 0 10px;
+
+            .swiper-slide-thumb-active {
+                .box-img {
+                    img {
+                        transform: scale(1.1);
+                        border-color: $theme-color;
+                    }
+                }
+            }
+        }
+
+        .box-img {
+            max-width: 100px;
+            height: 100px;
+            display: block;
+            margin: auto;
+            border-radius: 50%;
+            cursor: pointer;
+
+            @include sm {
+                max-width: 60px;
+                height: 60px;
+            }
+
+            img {
+                border-radius: 50%;
+                border: 3px solid transparent;
+                transition: all 0.4s ease-in-out;
+            }
+        }
+    }
+
+    .box-text {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32px;
+        text-align: center;
+        color: $title-color;
+        margin-bottom: 40px;
+
+        @include sm {
+            font-size: 18px;
+        }
+    }
+
+    .box-title {
+        margin-bottom: 0;
+    }
+
+    .box-desig {
+        margin-bottom: 0;
+    }
+}
+
+/* testi area start ---------------------------*/
+
+/* testi-block ---------------------*/
+.testi-block {
+    position: relative;
+    z-index: 2;
+    background-color: #EBF5F3;
+    padding: 56px 60px;
+    border-radius: 24px;
+
+    @include xxl {
+        padding: 45px 35px;
+    }
+
+    .testi-quote {
+        margin-bottom: 35px;
+    }
+
+    .box-text {
+        font-weight: 500;
+        font-size: 20px;
+        color: $title-color;
+        margin-bottom: 44px;
+
+        @include vxs {
+            font-size: 16px;
+        }
+    }
+
+    .box-profile {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        align-items: center;
+
+        .box-info {
+            text-align: left;
+        }
+
+        .box-author {
+            max-width: 100px;
+            border-radius: 50%;
+
+            img {
+                border-radius: 50%;
+            }
+        }
+
+        .box-title {
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: 0.02em;
+            color: $title-color;
+            margin-bottom: 0;
+
+            @include vxs {
+                font-size: 18px;
+            }
+
+        }
+
+        .box-desig {
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 0.02em;
+            color: $title-color;
+        }
+    }
+}
+
+/* testi-slider4 -----------------*/
+.testi-slider4 {
+    margin-right: -20% !important;
+
+    @include lg {
+        margin: 0 !important;
+    }
+
+    .slider-arrow {
+        &:hover {
+            background-color: #004D40;
+        }
+    }
+}
+
+.testi-item {
+    position: relative;
+    border-radius: 16px;
+    padding: 0 40px 0 40px;
+    z-index: 2;
+
+    &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        bottom: 20px;
+        background: #EBF5F3;
+        border-radius: inherit;
+        z-index: -1;
+    }
+
+    .testi-quote {
+        display: inline-block;
+        background: #004D40;
+        border-radius: 0px 0px 42.5px 42.5px;
+        padding: 42px 27px 38px 27px;
+
+    }
+
+    .box-review {
+        text-align: right;
+        margin-bottom: 30px;
+        color: #004D40;
+        font-size: 18px;
+
+        i {
+            margin-right: 5px;
+        }
+    }
+
+    .box-text {
+        font-weight: 400;
+        font-size: 18px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #03060E;
+        margin-bottom: 30px;
+    }
+
+    .box-profile {
+        position: relative;
+        background: #FFD54F;
+        border-radius: 16px 0px;
+        max-width: 334px;
+        display: block;
+        margin-left: auto;
+        margin-right: -40px;
+        display: flex;
+        gap: 16px;
+        padding: 12px 41px 12px 54px;
+        z-index: 3;
+
+        @include vxs {
+            padding: 12px 25px;
+        }
+         @include vxs {
+            padding: 10px 16px;
+         }
+
+        &:before {
+            content: "";
+            background-color: transparent;
+            border-style: solid;
+            border-width: 0 25px 20px 0;
+            border-color: transparent #DAB232 transparent transparent;
+            position: absolute;
+            left: -25px;
+            top: 74%;
+        }
+
+    }
+
+    .box-title {
+        margin-bottom: 0;
+
+        @include vxs {
+            font-size: 20px;
+        }
+    }
+
+}

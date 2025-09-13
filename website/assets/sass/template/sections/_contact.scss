@@ -1,0 +1,1693 @@
+/* Contact Page ---------------------------------- */
+.rsvp-form {
+
+    select,
+    .form-control,
+    .form-select,
+    textarea,
+    input {
+        background-color: transparent;
+        height: 48px;
+        border: 1px solid rgba(153, 153, 153, 0.5);
+        border-radius: 8px;
+    }
+
+    .form-btn {
+        margin-top: 20px;
+        text-align: right;
+
+        @include xl {
+            text-align: left;
+        }
+    }
+
+    .th-btn {
+        padding: 20px 30px;
+    }
+
+    input[type="radio"i] {
+        //display: none;
+    }
+
+    // input[type="radio"]:checked ~ label::before { 
+    //     border-color: #999999;
+    //     background-color: transparent; 
+    //     color: var(--white-color);
+    // }
+
+}
+
+.donation-area {
+    position: relative;
+    padding: 84px 0 84px 0;
+    z-index: 2;
+
+    &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(3, 6, 14, 0.7), rgba(3, 6, 14, 0.7));
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        z-index: -1;
+
+    }
+}
+
+
+.donation-form {
+    max-width: 714px;
+    background-color: $white-color;
+    box-shadow: 0px 2px 30px rgba(3, 6, 14, 0.1);
+    padding: 70px;
+    border-radius: 24px;
+
+    &.style2 {
+        @include xl {
+            max-width: 600px;
+        }
+
+        @include lg {
+            max-width: 100%;
+        }
+    }
+
+    &.style3 {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+
+        .donate-amount-button-list li {
+            border: 1px solid #fff;
+            color: $white-color;
+        }
+
+        .form-group.donate-input {
+            input {
+                color: $white-color;
+            }
+
+            .icon {
+                background: var(--theme-color2);
+                color: $title-color;
+            }
+        }
+
+        input[type="checkbox"].style2~label {
+            color: $white-color;
+        }
+
+        select,
+        .form-control,
+        .form-select,
+        textarea,
+        input {
+            color: $white-color;
+
+            @include inputPlaceholder {
+                color: $white-color;
+            }
+        }
+
+        input[type="checkbox"].style2~label:before {
+            background-color: transparent;
+            border: 2px solid $white-color;
+        }
+
+    }
+
+    &.style4 {
+        background-color: #EBF5F3;
+        position: relative;
+        z-index: 2;
+        max-width: 810px;
+        mask-image: url("../img/normal/bg-shape.png");
+        mask-repeat: no-repeat;
+        mask-size: 100% 100%;
+        margin-right: -60px;
+        padding: 70px 120px;
+        margin-bottom: -2px;
+
+        @include xxl {
+            padding: 70px 90px;
+        }
+
+        @include md { 
+            padding: 50px 40px;
+            mask-image: none;
+            max-width: 100%;
+            margin-bottom: 80px;
+        }
+
+        .goal-amount-wrapp {
+            border-color: #B1C3BF;
+        }
+
+        .donate-amount-button-list li {
+            border-color: #B1C3BF;
+        }
+
+        .form-group.donate-input input {
+            border-color: #B1C3BF;
+        }
+
+        select,
+        .form-control,
+        .form-select,
+        textarea,
+        input {
+            border-color: #B1C3BF;
+        }
+
+        .form-group.style2 {
+            .payment-method {
+                border-color: #B1C3BF;
+            }
+
+            .form-select {
+                border-color: #B1C3BF;
+            }
+
+            .form-control {
+
+                &.style1,
+                &.style2 {
+                    border-color: #B1C3BF;
+                }
+            }
+        }
+
+
+    }
+
+    @include xxl {
+        padding: 50px;
+    }
+
+    @include ml {
+        padding: 40px;
+    }
+
+    @include lg {
+        max-width: 100%;
+        padding: 30px;
+    }
+
+    @include vxs {
+        padding: 25px;
+    }
+
+    .goal-amount {
+        &-wrapp {
+            padding: 17.6px 44px;
+            border: 1px solid #E4E4E6;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            gap: 32px;
+
+            @include ml {
+                padding: 13px 20px;
+                gap: 15px;
+
+            }
+
+            @include sm {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        .text {
+            color: $theme-color;
+        }
+
+        .box-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: $title-color;
+        }
+    }
+
+    .feature-circle {
+        .progressbar {
+            position: relative;
+            max-width: 78px;
+            max-height: 78px;
+            background-color: #E4E4E5;
+            border-radius: 50%;
+            display: block;
+            margin: auto;
+
+            .circle-num {
+                font-size: 16px;
+                line-height: 50px;
+                letter-spacing: 0.02em;
+                color: $title-color;
+                font-family: $body-font;
+                position: absolute;
+                top: -6px;
+                left: -6px;
+                width: 78px;
+                height: 78px;
+                line-height: 78px;
+                border-radius: 50%;
+                margin: 8px;
+                text-align: center;
+            }
+        }
+    }
+
+    .donate-amount-button-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-top: 34px;
+        margin-bottom: 24px;
+
+        @include ml {
+            gap: 12px;
+        }
+
+        li {
+            border: 1px solid #E4E4E5;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            color: $title-color;
+            padding: 7px 15px;
+            cursor: pointer;
+            transition: 0.4s;
+
+            &.active,
+            &:hover {
+                background: var(--theme-color2);
+                border-color: $theme-color2;
+                color: $title-color;
+            }
+        }
+    }
+
+    .form-group.donate-input {
+        position: relative;
+        margin-bottom: 20px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 70px;
+            width: 1px;
+            height: 100%;
+            background-color: rgba(253, 253, 233, 0.5);
+        }
+
+        input {
+            position: relative;
+            background-color: transparent;
+            border: 1px solid #E4E4E5;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 18px;
+            height: 42px;
+            letter-spacing: 0.02em;
+            color: $title-color;
+        }
+
+        .icon {
+            position: absolute;
+            left: 25px;
+            top: 20px;
+            transform: translate(-50%, -50%);
+            right: auto;
+            width: 20px;
+            height: 20px;
+            background: $theme-color;
+            border-radius: 50%;
+            text-align: center;
+            color: $white-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 500;
+
+        }
+    }
+
+    .form-group {
+        margin-bottom: 8px;
+    }
+
+    select,
+    .form-control,
+    .form-select,
+    textarea,
+    input {
+        background-color: transparent;
+        height: 48px;
+        border: 1px solid #E4E4E5;
+        border-radius: 8px;
+        color: $body-color;
+
+        @include inputPlaceholder {
+            color: $body-color;
+        }
+    }
+
+    input[type="checkbox"].style2~label {
+        color: $title-color;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 20px;
+
+        &:before {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid #666666;
+            height: 16px;
+            width: 16px;
+            line-height: 13px;
+            border-radius: 2px;
+            top: 6px;
+        }
+    }
+
+    .dropdown-btn {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown-btn img {
+        width: 30px;
+        margin-right: 10px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 250px;
+        border: 1px solid #ccc;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content div {
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown-content div:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown-content img {
+        width: 30px;
+        margin-right: 10px;
+    }
+
+    .form-group.style2 {
+        .payment-method {
+            display: flex;
+            border: 1px solid #E4E4E5;
+            border-radius: 8px;
+
+            @include sm {
+                flex-direction: column;
+                gap: 20px;
+                border: none;
+            }
+        }
+
+        .nice-select {
+            &:after {
+                top: 18px;
+                border-bottom-color: $white-color;
+                border-right-color: $white-color;
+
+            }
+
+            .option {
+                color: #181A1E;
+                min-height: 30px;
+                display: block;
+                margin: 0;
+
+                &.selected {
+                    color: $theme-color !important;
+                    background: $theme-color !important;
+                    font-weight: 500;
+
+                    &.focus {
+                        color: #fff !important;
+                        background: $theme-color !important;
+                    }
+                }
+
+                &:hover,
+                &.focus {
+                    background: $theme-color !important;
+                    color: #fff !important;
+                }
+            }
+        }
+
+        .form-select {
+            max-width: 170px;
+            border: none;
+            border-radius: 0;
+            border-right: 1px solid #E4E4E5;
+
+            @include sm {
+                border: 1px solid #E4E4E5;
+                max-width: 100%;
+            }
+
+        }
+
+        .form-control {
+            border: none;
+            border-radius: 0;
+
+            &.style1 {
+                padding: 0 16px 0 16px;
+                padding-right: 16px;
+                min-width: 200px;
+                border-right: 1px solid #E4E4E5;
+
+                @include sm {
+                    border: 1px solid #E4E4E5;
+                    min-width: 100%;
+                }
+
+            }
+
+            &.style2 {
+                padding: 0 16px 0 16px;
+                padding-right: 16px;
+                min-width: 200px;
+                border-right: 1px solid #E4E4E5;
+
+                @include sm {
+                    border: 1px solid #E4E4E5;
+                    min-width: 100%;
+                }
+
+            }
+
+            &.style3 {
+                padding: 0 14px 0 14px;
+                min-width: 70px;
+
+                @include sm {
+                    min-width: 100%;
+                    border: 1px solid #E4E4E5;
+                }
+            }
+        }
+    }
+
+    .th-btn {
+        margin-top: 30px;
+    }
+}
+
+
+/* give-form-wrap ----------------------------------*/
+.give-form-wrap {
+    .give-goal-progress {
+        display: none;
+    }
+
+    .give-donation-amount {
+        position: relative;
+        background-color: transparent;
+        border: 1px solid #E4E4E5;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: 0.02em;
+        color: $title-color;
+
+    }
+
+    form[id*=give-form] #give-final-total-wrap .give-donation-total-label {
+        background-color: transparent;
+        border: none;
+        box-sizing: border-box;
+        color: $title-color;
+        height: 48px;
+        line-height: 48px;
+        display: inline-block;
+    }
+
+    form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
+        height: 48px;
+        line-height: 48px;
+        background-color: transparent;
+        border: none;
+        display: inline-block;
+    }
+
+    form[id*=give-form] .give-donation-amount #give-amount,
+    form[id*=give-form] .give-donation-amount #give-amount-text {
+        background: transparent;
+        border: none;
+        height: 48px;
+    }
+
+    form[id*=give-form] .give-donation-amount .give-currency-symbol {
+        border: none;
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        background: $theme-color2;
+        border-radius: 50%;
+        text-align: center;
+        color: #00534B;
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 0;
+        margin: 13px 20px;
+
+    }
+
+    .give-donation-levels-wrap {
+        .give-btn {
+            background-color: transparent;
+            height: 48px;
+            border-radius: 8px;
+            color: $title-color;
+            border: 1px solid #E4E4E5;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: 0.4s;
+
+            &.give-default-level {
+                background-color: $theme-color2;
+                border-color: $theme-color2;
+            }
+        }
+
+        li {
+            margin: 0;
+
+            &:not(:last-child) {
+                margin: 0 10px 10px 0 !important;
+            }
+        }
+    }
+
+    .give-payment-mode-label {
+        font-weight: 500;
+        margin-bottom: 15px;
+        color: $title-color;
+        border: none;
+    }
+
+    input[type="radio"]:checked~label::before {
+        border-color: $theme-color2;
+        background-color: $theme-color2;
+        color: var(--white-color);
+    }
+
+    input[type="radio"]~label::before {
+        border: 1px solid $theme-color2;
+    }
+
+    label {
+        color: $title-color;
+    }
+
+    legend {
+        font-weight: 500;
+        margin-bottom: 15px;
+        color: $title-color;
+        border-bottom: none !important;
+    }
+
+    .give-form .form-row input[type=text],
+    [id*=give-form] .form-row input[type=email].required,
+    .form-wrap {
+        background-color: transparent;
+        height: 48px;
+        border: 1px solid #E4E4E5;
+        border-radius: 8px;
+        color: var(--body-color);
+        padding: 0 25px 0 25px;
+
+        &:focus {
+            background-color: transparent;
+        }
+    }
+
+}
+
+#give_purchase_form_wrap {
+    .give-submit-button-wrap {
+        .give-btn {
+            background-color: $theme-color2;
+            color: $title-color;
+        }
+    }
+}
+
+#give-recurring-form .give-tooltip,
+form.give-form .give-tooltip,
+form[id*=give-form] .give-tooltip {
+    color: #fff;
+}
+
+form[id*=give-form] #give-gateway-radio-list>li input[type=radio] {
+    display: none;
+}
+
+form[id*=give-form] #give-gateway-radio-list {
+    margin: 0 0 0px;
+}
+
+.no-fields {
+    p {
+        color: $title-color;
+    }
+
+    ol {
+        li {
+            color: $title-color;
+        }
+    }
+}
+
+/* about-form --------------------*/
+.about-form-area {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 524px;
+    margin-right: 20px;
+
+    @media(max-width: 1699px) {
+        margin-right: 0;
+    }
+
+    @include sm {
+        position: relative;
+        max-width: 100%;
+        margin: 0 35px;
+    }
+
+    .box-title {
+        background-color: $theme-color2;
+        box-shadow: 0px 10px 30px rgba(238, 195, 60, 0.5);
+        border-radius: 16px 16px 0px 0px;
+        padding: 28px;
+        text-align: center;
+        margin: 0 -30px -30px -30px;
+        position: relative;
+        z-index: 4;
+
+        @include vxs {
+            font-size: 14px;
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            background-color: transparent;
+            border-style: solid;
+            border-width: 0 30px 20px 0;
+            border-color: transparent #DDB73E transparent transparent;
+            position: absolute;
+            left: 0;
+            top: 100%;
+        }
+
+        &:after {
+            left: unset;
+            right: 0;
+            border-width: 0px 0px 20px 30px;
+            border-color: transparent transparent transparent #DDB73E;
+        }
+    }
+}
+
+.about-form {
+    background-color: $white-color;
+    border: 1px solid $theme-color;
+    border-radius: 16px;
+    padding: 70px 40px 40px;
+
+    @include xs {
+        padding: 70px 20px 20px;
+    }
+
+    select,
+    .form-control,
+    .form-select,
+    textarea,
+    input {
+        border: none;
+        border-radius: 100px;
+        background: $white-color;
+        border: 1px solid #E4E4E6;
+        border-radius: 8px;
+        color: $title-color;
+        font-weight: 400;
+
+        @include inputPlaceholder {
+            color: $title-color;
+        }
+    }
+
+    .nice-select {
+        &:after {
+            top: 18px;
+            border-top: .3em solid $body-color;
+            border-right: .3em solid transparent;
+            border-bottom: 0;
+            border-left: .3em solid transparent;
+            transform: none;
+
+        }
+
+        .option {
+            color: #181A1E;
+            min-height: 30px;
+            display: block;
+            margin: 0;
+
+            &.selected {
+                color: $theme-color !important;
+                background: $theme-color !important;
+                font-weight: 500;
+
+                &.focus {
+                    color: #fff !important;
+                    background: $theme-color !important;
+                }
+            }
+
+            &:hover,
+            &.focus {
+                background: $theme-color !important;
+                color: #fff !important;
+            }
+        }
+    }
+
+    .text {
+        text-align: center;
+        display: block;
+        margin: 20px 0 6px 0;
+    }
+
+    audio {
+        background-color: #fff;
+        border: 1px solid #E4E4E5;
+        border-radius: 200px;
+        width: 100%;
+
+        source {
+            background-color: #fff;
+        }
+    }
+
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-panel {
+        background-color: #fff;
+        border: 1px solid #E4E4E5;
+        color: $title-color;
+    }
+}
+
+.about-quran-area {
+    position: absolute;
+    bottom: -9%;
+    right: 0;
+    max-width: 524px;
+    margin-right: 20px;
+
+    @media(max-width: 1699px) {
+        margin-right: 0;
+    }
+
+    @include sm {
+        position: relative;
+        max-width: 100%;
+        margin: 0 35px 30px 35px;
+    }
+
+    .box-title {
+        background-color: $theme-color2;
+        box-shadow: 0px 10px 30px rgba(238, 195, 60, 0.5);
+        border-radius: 16px 16px 0px 0px;
+        padding: 28px;
+        text-align: center;
+        margin: 0 -30px -30px -30px;
+        position: relative;
+        z-index: 4;
+
+        @include vxs {
+            font-size: 14px;
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            background-color: transparent;
+            border-style: solid;
+            border-width: 0 30px 20px 0;
+            border-color: transparent #DDB73E transparent transparent;
+            position: absolute;
+            left: 0;
+            top: 100%;
+        }
+
+        &:after {
+            left: unset;
+            right: 0;
+            border-width: 0px 0px 20px 30px;
+            border-color: transparent transparent transparent #DDB73E;
+        }
+    }
+}
+
+.about-quran {
+    background-color: $white-color;
+    border: 1px solid $theme-color;
+    border-radius: 16px;
+    padding: 70px 40px 40px;
+
+    @include xs {
+        padding: 70px 20px 20px;
+    }
+
+    .quran-image {
+        border-radius: 8px;
+
+        img {
+            border-radius: 8px;
+        }
+    }
+
+    .text {
+        text-align: center;
+        display: block;
+        margin: 20px 0 30px 0;
+    }
+
+    audio {
+        background-color: #fff;
+        border: 1px solid #E4E4E5;
+        border-radius: 200px;
+        width: 100%;
+
+        source {
+            background-color: #fff;
+        }
+    }
+
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-panel {
+        background-color: #fff;
+        border: 1px solid #E4E4E5;
+        color: $title-color;
+    }
+
+
+
+}
+
+.contact-form2 {
+    border: 1px solid #999999;
+    border-right-color: transparent;
+    border-radius: 16px 0 0 16px;
+    padding: 56px 56px 51px 56px;
+
+    .h2 {
+        margin-top: -0.5rem;
+        margin-bottom: 45px;
+
+        @include ml {
+            font-size: 30px;
+        }
+
+        @include xs {
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+
+        @media(max-width: 480px) {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        @include vxs {
+            font-size: 16px;
+        }
+    }
+
+    @include xl {
+        padding: 40px;
+    }
+
+    @include lg {
+        border: 1px solid #999999;
+        border-radius: 16px;
+    }
+
+    @include vxs {
+        padding: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 24px;
+    }
+
+    select,
+    .form-control,
+    .form-select,
+    textarea,
+    input {
+        background-color: transparent;
+        border: 1px solid #999999;
+        border-radius: 8px;
+        color: $body-color;
+        font-weight: 400;
+        height: 60px;
+        line-height: 60px;
+
+        @include inputPlaceholder {
+            color: $body-color;
+        }
+    }
+
+    textarea.form-control,
+    textarea {
+        min-height: 200px;
+        border-radius: 8px;
+        padding-top: 16px;
+        padding-bottom: 17px;
+    }
+
+    .nice-select {
+        &:after {
+            border-bottom: 1px solid var(--body-color);
+            border-right: 1px solid var(--body-color);
+        }
+
+        .option {
+            color: #181A1E;
+            min-height: 30px;
+            display: block;
+            margin: 0;
+
+            &.selected {
+                color: $theme-color !important;
+                background: $theme-color !important;
+                font-weight: 500;
+
+                &.focus {
+                    color: #fff !important;
+                    background: $theme-color !important;
+                }
+            }
+
+            &:hover,
+            &.focus {
+                background: $theme-color !important;
+                color: #fff !important;
+            }
+        }
+    }
+
+    .th-btn {
+        margin-top: 20px;
+        padding: 19.5px 42px;
+    }
+}
+
+.search-form {
+    max-width: 983px;
+    display: block;
+    margin: auto;
+
+    select,
+    .form-control,
+    .form-select,
+    textarea,
+    input {
+        height: 56px;
+        padding: 0 25px 0 25px;
+        padding-right: 45px;
+        color: var(--body-color);
+        background: #F8F8F8;
+        border-radius: 50px;
+        font-size: 14px;
+        width: 100%;
+        font-family: var(--body-font);
+        transition: 0.4s ease-in-out;
+    }
+}
+
+.contact-form {
+    background-color: $white-color;
+    border-radius: 30px;
+    padding: 60px;
+
+    @include ml {
+        padding: 40px;
+    }
+
+    @include sm {
+        padding: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+
+        i {
+            font-size: 14px;
+            font-weight: 300;
+            color: $body-color;
+        }
+    }
+
+    select,
+    .form-control,
+    .form-select,
+    textarea,
+    input {
+        background: #F8F8F8;
+        border: 1px solid #E0E0E0;
+        border-radius: 10px;
+        height: 56px;
+
+    }
+
+    .th-btn {
+        &:hover {
+
+            &:before,
+            &:after {
+                width: 120%;
+            }
+        }
+    }
+
+    .nice-select {
+        font-size: 14px;
+        font-weight: 500;
+
+        &:after {
+            right: 30px;
+            border-bottom: 2px solid $body-color;
+            border-right: 2px solid $body-color;
+        }
+
+        .option {
+            color: $title-color;
+
+            &.selected {
+                color: #57B33E !important;
+                background: #57B33E !important;
+
+                &.focus {
+                    color: $title-color !important;
+                    background: #57B33E !important;
+                }
+            }
+
+            &:hover,
+            &.focus {
+                background: #57B33E !important;
+                color: $title-color !important;
+            }
+        }
+
+        &.open {
+            .list {
+                border-bottom: 3px solid $theme-color;
+            }
+        }
+    }
+
+    textarea.form-control,
+    textarea {
+        min-height: 145px;
+        padding-top: 16px;
+        padding-bottom: 17px;
+    }
+
+    .th-btn:hover:after {
+        background-color: $theme-color;
+    }
+}
+
+.consultation-area {
+    margin-left: 100px;
+
+    @include ml {
+        margin-left: 0;
+    }
+}
+
+.consultation-form {
+
+    select,
+    .form-control,
+    .form-select,
+    textarea,
+    input {
+        background-color: transparent;
+        border: 1px solid $white-color;
+        border-radius: 30px;
+        color: $white-color;
+
+        @include inputPlaceholder {
+            color: $white-color;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    .th-btn {
+        padding: 17.5px 20px;
+    }
+}
+
+
+
+.contact-info {
+    display: flex;
+    gap: 20px;
+
+    &_wrapp {
+        &:nth-child(2) {
+            .contact-info {
+                &_icon {
+                    background-color: #F3BA0E;
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            .contact-info {
+                &_icon {
+                    background-color: #17D2D4;
+                }
+            }
+        }
+
+        &:nth-child(4) {
+            .contact-info {
+                &_icon {
+                    background-color: #70D715;
+                }
+            }
+        }
+    }
+
+
+    @include vxs {
+        flex-direction: column;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    .media-body {
+        @include vxs {
+            text-align: center;
+        }
+
+    }
+
+
+
+    &_icon {
+        display: inline-block;
+        width: 80px;
+        min-width: 80px;
+        height: 80px;
+        line-height: 70px;
+        border-radius: 24px;
+        background-color: var(--theme-color);
+        color: var(--white-color);
+        text-align: center;
+        font-size: 35px;
+        position: relative;
+
+        @include vxs {
+            display: block;
+            margin: auto;
+            text-align: center;
+        }
+
+    }
+
+    &_label {
+        font-family: $title-font;
+        font-size: 24px;
+        line-height: 30px;
+        color: $title-color;
+        font-weight: 600;
+        margin-top: -0.3rem;
+        margin-bottom: 2px;
+
+        @include xl {
+            font-size: 20px;
+        }
+    }
+
+    &_link {
+        font-family: var(--body-font);
+        color: #4D5765;
+        line-height: 26px;
+        font-size: 16px;
+        display: block;
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+            color: $theme-color;
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    .media-body {
+        margin-bottom: -0.5rem;
+
+    }
+}
+
+.contact-media {
+    background: #F0F0F0;
+    border-radius: 16px;
+    padding: 63px 40px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include ml {
+        padding: 30px 24px;
+    }
+
+    @include xl {
+        gap: 18px;
+    }
+
+    @include vxs {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .icon-btn {
+        --btn-size: 80px;
+        font-size: 30px;
+        background-color: $theme-color2;
+        border: none;
+        border-radius: 48px;
+        color: $theme-color;
+    }
+
+    .box-text {
+        font-size: 18px;
+        max-width: 300px;
+        margin-bottom: 0;
+
+        @include ml {
+            font-size: 16px;
+        }
+
+        span {
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            display: block;
+            max-width: fit-content;
+
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+
+    .box-title {
+        margin-bottom: 5px;
+
+        @include ml {
+            font-size: 20px;
+        }
+    }
+
+    &:hover {
+        .icon-btn {
+            background-color: $theme-color;
+            color: $white-color;
+        }
+    }
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include vxs {
+        flex-direction: column;
+    }
+
+    &:not(:last-child) {
+        border-bottom: 1px solid #ECECEC;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .media-body {
+        @include vxs {
+            text-align: center;
+        }
+
+    }
+
+    &-wrap {
+        border-radius: 30px;
+        border: 1px solid $smoke-color;
+        background-color: var(--white-color);
+        padding: 60px;
+
+        @include xl {
+            padding: 40px;
+        }
+
+        @include lg {
+            padding: 30px;
+        }
+
+        @include vxs {
+            text-align: center;
+        }
+
+        .sec-title {
+            margin-bottom: 10px;
+        }
+    }
+
+
+    &_icon {
+        display: inline-block;
+        --icon-size: 70px;
+        min-width: 70px;
+        line-height: 70px;
+        background-color: rgba(62, 102, 243, 0.10);
+        color: var(--theme-color);
+        text-align: center;
+        font-size: 25px;
+        border-radius: 99px;
+        position: relative;
+        transition: all 0.4s ease-in-out;
+    }
+
+    &_title {
+        font-family: $body-color;
+        font-size: 16px;
+        color: $body-color;
+        font-weight: 400;
+        margin-bottom: 4px;
+    }
+
+    &_text {
+        font-size: 18px;
+        font-weight: 600;
+        color: $title-color;
+        letter-spacing: -0.36px;
+        margin-bottom: 0;
+        display: block;
+        transition: all 0.4s ease-in-out;
+
+        a {
+            color: inherit;
+        }
+
+        &:hover {
+            color: $theme-color;
+        }
+    }
+
+    &:hover {
+        .contact-item {
+            &_icon {
+                background-color: $theme-color;
+
+
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+}
+
+.rounded-20 {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.form-text {
+    font-size: 16px;
+}
+
+.contact-map {
+    position: relative;
+    line-height: 0px;
+    border-radius: 30px;
+
+    @include md {
+        margin-bottom: 40px;
+    }
+
+    .contact-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+
+        i {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 24px;
+            color: $white-color;
+            background-color: $theme-color;
+            border-radius: 50%;
+
+            @include md {
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+            }
+
+        }
+    }
+
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        z-index: 3;
+
+        img {
+            animation: jumpAni 2s ease-in-out infinite alternate;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0px;
+            right: 0;
+            margin: auto;
+            top: 90%;
+            width: 38px;
+            height: 18px;
+            border-radius: 50%;
+            background: rgba(13, 13, 12, 0.2);
+            z-index: -1;
+
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: -40px;
+            right: 0;
+            margin: auto;
+            top: 50%;
+            width: 130px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid $white-color;
+            z-index: -1;
+
+        }
+
+        @keyframes location-anim {
+            0% {
+                transform: rotate(5deg) translate(5px, 5px);
+            }
+
+            100% {
+                transform: rotate(5deg) translate(-5px, -5px);
+            }
+        }
+
+        @keyframes location-anim2 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0.5);
+            }
+        }
+    }
+
+
+
+    iframe {
+        width: 100%;
+        height: 563px;
+
+        @include sm {
+            height: 400px;
+        }
+    }
+
+    &.style2 {
+        iframe {
+            width: 100%;
+            height: 786px;
+            border-radius: 16px;
+
+            @include sm {
+                height: 400px;
+            }
+        }
+    }
+
+}
+
+.contact-image {
+    height: 749px;
+    border-radius: 0px 16px 16px 0px;
+
+
+    @include ml {
+        height: 100%;
+    }
+
+    @include lg {
+        border-radius: 16px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0px 16px 16px 0px;
+
+        @include lg {
+            border-radius: 16px;
+        }
+    }
+}
+
+.contact-wrapp {
+    display: flex;
+    justify-content: center;
+}
+
+.discount-wrapp {
+    &.style3 {
+        .play-btn>i {
+            background-color: $theme-color;
+            color: $title-color;
+
+            &:hover {
+                color: $title-color;
+            }
+        }
+    }
+}
+
+.appoinment-area2 {
+    border-radius: 30px;
+}
+
+.contact-image2 {
+    border-radius: 0px 30px 30px 0px;
+    text-align: right;
+    height: 100%;
+    margin-left: 95px;
+
+    @include ml {
+        margin-left: 40px;
+    }
+
+    @include lg {
+        border-radius: 0px 30px 30px 30px;
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0px 0px 30px 0px;
+
+        @include lg {
+            border-radius: 0px 0px 30px 30px;
+        }
+    }
+}
+
+.appointment-content2 {
+    padding: 120px 0 120px 120px;
+
+    @include ml {
+        padding: 120px 0 120px 60px;
+    }
+
+    @include lg {
+        padding: 80px 40px 80px 40px;
+    }
+
+    @include vxs {
+        padding: 80px 20px 80px 20px;
+    }
+}
